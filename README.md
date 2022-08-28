@@ -19,7 +19,7 @@ mkdir vinerproxy
 
 cd vinerproxy
 
-wget https://raw.githubusercontent.com/vinerProxy/vinerProxy/master/release/vinerProxyv100_linux_amd64
+wget https://raw.githubusercontent.com/vinerProxy/vinerProxy/master/release/vtProxy
 
 chmod 777 vinerProxyv100_linux_amd64
 
