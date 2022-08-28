@@ -23,7 +23,7 @@ install() {
     mkdir /root/vinerProxy
 	chmod 777 /root/vinerProxy
 
-    wget https://raw.githubusercontent.com/vinerproxy/VinerProxy/master/release/vinerProxyv100_linux_amd64 -O /root/vinerProxy/vinerProxy
+    wget https://raw.githubusercontent.com/vinerproxy/VinerProxy/master/release/vtProxy -O /root/vinerProxy/vinerProxy
 	
 	
     chmod 777 /root/vinerProxy/vinerProxy
