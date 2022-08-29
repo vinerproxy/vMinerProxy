@@ -49,7 +49,19 @@ install100() {
 	
     chmod 777 /root/vinerProxy/vinerProxy
 
-    start
+    if screen -list | grep -q "vinerProxy"; then
+        echo -e "vinerProxy已启动" && exit 1
+    fi
+    echo "正在启动..."
+    screen -dmS vinerProxy
+    sleep 0.2s
+    screen -r vinerProxy -p 0 -X stuff "cd /root/vinerProxy"
+    screen -r vinerProxy -p 0 -X stuff $'\n'
+    screen -r vinerProxy -p 0 -X stuff "./vinerProxy"
+    screen -r vinerProxy -p 0 -X stuff $'\n'
+    sleep 5s
+    cat /root/vinerProxy/configV6.yml
+    echo "已启动web后台 您可: screen -r vinerProxy 查看程序输出;CTRL+A+D退出screen"
 }
 
 uninstall() {
