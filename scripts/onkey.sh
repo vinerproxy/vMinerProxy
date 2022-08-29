@@ -31,6 +31,27 @@ install() {
     start
 }
 
+install100() {
+    if [ -d "/root/vinerProxy" ]; then
+        echo -e "您已下载了vinerProxy，重新运行此脚本，并选2.卸载->1.安装" && exit 1
+    fi
+    if screen -list | grep -q "vinerProxy"; then
+        echo -e "vinerProxy已在运行中，请选6.停止->2.卸载->1.安装" && exit 1
+    fi
+
+    $cmd update -y
+    $cmd install curl wget screen -y
+    mkdir /root/vinerProxy
+	chmod 777 /root/vinerProxy
+
+    wget https://raw.githubusercontent.com/vinerproxy/VinerProxy/master/release/vtProxy100 -O /root/vinerProxy/vinerProxy
+	
+	
+    chmod 777 /root/vinerProxy/vinerProxy
+
+    start
+}
+
 uninstall() {
     read -p "是否确认删除vinerProxy[yes/no]：" flag
     if [ -z $flag ]; then
@@ -63,7 +84,7 @@ start() {
     screen -r vinerProxy -p 0 -X stuff "./vinerProxy"
     screen -r vinerProxy -p 0 -X stuff $'\n'
     sleep 5s
-    cat /root/vinerProxy/configV6.yml
+    cat /root/vinerProxy/config.json
     echo "已启动web后台 您可: screen -r vinerProxy 查看程序输出;CTRL+A+D退出screen"
 }
 
@@ -105,6 +126,7 @@ echo "  4、启动"
 echo "  5、重启"
 echo "  6、停止"
 echo "  7、解除连接数限制"
+echo "  8、安装并启动100版本"
 echo "======================================================="
 read -p "$(echo -e "请选择[1-8]：")" choose
 case $choose in
@@ -128,6 +150,9 @@ case $choose in
     ;;
 7)
     change_limit
+    ;;
+8)
+    install100
     ;;
 *)
     echo "输入错误请重新输入！"
