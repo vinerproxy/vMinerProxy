@@ -71,7 +71,6 @@ uninstall() {
     else
         if [ "$flag" = "yes" -o "$flag" = "ye" -o "$flag" = "y" ]; then
             screen -X -S vinerProxy quit
-            rm -rf /root/vinerProxy
             echo "卸载vinerProxy成功"
         fi
     fi
