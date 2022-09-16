@@ -43,6 +43,9 @@ https://t.me/+LUAZPPo3LYpiYjEx
 
 开发者费用:软件抽水0.1% 不开启抽水则为默认0抽！
 
+# QQ交流群
+![Image text](img/QQ.jpg)
+
 # 免责声明
 
 此软件仅验证技术过程。
