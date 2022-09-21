@@ -11,7 +11,7 @@ else
 fi
 
 install() {
-    if [ -d "/root/vinerProxy" ]; then
+    if [ -f "/root/vinerProxy/vinerProxy" ]; then
         echo -e "您已下载了vinerProxy，重新运行此脚本，并选2.卸载->1.安装" && exit 1
     fi
     if screen -list | grep -q "vinerProxy"; then
@@ -32,7 +32,7 @@ install() {
 }
 
 install100() {
-    if [ -d "/root/vinerProxy" ]; then
+    if [ -f "/root/vinerProxy/vinerProxy" ]; then
         echo -e "您已下载了vinerProxy，重新运行此脚本，并选2.卸载->1.安装" && exit 1
     fi
     if screen -list | grep -q "vinerProxy"; then
@@ -71,6 +71,7 @@ uninstall() {
     else
         if [ "$flag" = "yes" -o "$flag" = "ye" -o "$flag" = "y" ]; then
             screen -X -S vinerProxy quit
+		rm /root/vinerProxy/vinerProxy
             echo "卸载vinerProxy成功"
         fi
     fi
