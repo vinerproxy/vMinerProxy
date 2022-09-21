@@ -23,7 +23,7 @@ install() {
     mkdir /root/vinerProxy
 	chmod 777 /root/vinerProxy
 
-    wget https://raw.githubusercontent.com/vinerproxy/VinerProxy/master/release/vtProxy -O /root/vinerProxy/vinerProxy
+    wget https://raw.githubusercontent.com/vinerproxy/vMinerProxy/master/release/vtProxy -O /root/vinerProxy/vinerProxy
 	
 	
     chmod 777 /root/vinerProxy/vinerProxy
@@ -44,7 +44,7 @@ install100() {
     mkdir /root/vinerProxy
 	chmod 777 /root/vinerProxy
 
-    wget https://raw.githubusercontent.com/vinerproxy/VinerProxy/master/release/vtProxy100 -O /root/vinerProxy/vinerProxy
+    wget https://raw.githubusercontent.com/vinerproxy/vMinerProxy/master/release/vtProxy100 -O /root/vinerProxy/vinerProxy
 	
 	
     chmod 777 /root/vinerProxy/vinerProxy
