@@ -128,45 +128,56 @@ change_limit(){
     fi
 }
 
+echomsg(){
+	echo "======================================================="
+	echo "  《vinerProxy 一键工具》"
+	echo "  1、安装(默认安装到/root/vinerProxy)"
+	echo "  2、卸载"
+	echo "  3、更新"
+	echo "  4、启动"
+	echo "  5、重启"
+	echo "  6、停止"
+	echo "  7、解除连接数限制"
+	echo "  8、安装并启动100版本"
+	echo "  9、退出"
+	echo "======================================================="
+}
 
-echo "======================================================="
-echo "vinerProxy 一键工具"
-echo "  1、安装(默认安装到/root/vinerProxy)"
-echo "  2、卸载"
-echo "  3、更新"
-echo "  4、启动"
-echo "  5、重启"
-echo "  6、停止"
-echo "  7、解除连接数限制"
-echo "  8、安装并启动100版本"
-echo "======================================================="
-read -p "$(echo -e "请选择[1-8]：")" choose
-case $choose in
-1)
-    install
-    ;;
-2)
-    uninstall
-    ;;
-3)
-    update
-    ;;
-4)
-    start
-    ;;
-5)
-    restart
-    ;;
-6)
-    stop
-    ;;
-7)
-    change_limit
-    ;;
-8)
-    install100
-    ;;
-*)
-    echo "输入错误请重新输入！"
-    ;;
-esac
+
+echomsg
+while read -p "$(echo -e "请选择[1-8]：")" choose
+do
+	case $choose in
+	1)
+	    install
+	    ;;
+	2)
+	    uninstall
+	    ;;
+	3)
+	    update
+	    ;;
+	4)
+	    start
+	    ;;
+	5)
+	    restart
+	    ;;
+	6)
+	    stop
+	    ;;
+	7)
+	    change_limit
+	    ;;
+	8)
+	    install100
+	    ;;
+	9)
+		break
+		;;
+	*)
+	    echo "输入错误请重新输入！"
+	    ;;
+	esac
+echomsg
+done
